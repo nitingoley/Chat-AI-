@@ -9,7 +9,7 @@ const MessageInputComponent = () => {
   const handleSendMessage = async () => {
     if (question.trim()) {
       try {
-        const res = await axios.post('https://chat-ai-3lz2.onrender.com/api/question', {
+        const res = await axios.post('http://localhost:3000/api/question', {
           question: question,
         });
         setResponse(res.data["AI Response :"]);
