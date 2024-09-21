@@ -9,7 +9,7 @@ const MessageInputComponent = () => {
   const handleSendMessage = async () => {
     if (question.trim()) {
       try {
-        const res = await axios.post('http://localhost:3000/api/question', {
+        const res = await axios.post('https://chat-ai-3lz2.onrender.com/api/question', {
           question: question,
         });
         setResponse(res.data["AI Response :"]);
@@ -23,15 +23,14 @@ const MessageInputComponent = () => {
     <div className="flex flex-col h-screen bg-gray-100">
       <Navbar />
 
-  
       <div className="flex-grow overflow-y-auto p-4 pt-24 bg-white rounded-md shadow-md mb-4 mx-4">
-      {response && (
-        <div className="bg-gray-100 text-gray-800 p-4 rounded-md mb-4">
-          <strong>AI Response:</strong> {response}
-        </div>
-      )}
+        {response && (
+          <div className="bg-gray-100 text-gray-800 p-4 rounded-md mb-4">
+            <strong>AI Response:</strong> {response}
+          </div>
+        )}
       </div>
-      
+
       <div className="flex items-center gap-2 px-4 pb-4">
         <input
           type="text"
